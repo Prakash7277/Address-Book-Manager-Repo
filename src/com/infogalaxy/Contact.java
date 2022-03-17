@@ -16,6 +16,9 @@ public class Contact {
     public void setLastName(String lastName){
         this.lastName = lastName;
     }
+    public void setMobNo(String mobNo){
+        this.mobNo = mobNo;
+    }
     public void setAddress(String address){
         this.address = address;
     }
@@ -24,9 +27,6 @@ public class Contact {
     }
     public void setState(String state){
         this.state = state;
-    }
-    public void setMobNo(String mobNo){
-        this.mobNo = mobNo;
     }
     public void setEmail(String email){
         this.email = email;
@@ -40,6 +40,9 @@ public class Contact {
     public String getLastName(){
         return this.lastName;
     }
+    public String getMobNo(){
+        return this.mobNo;
+    }
     public String getAddress(){
         return this.address;
     }
@@ -48,9 +51,6 @@ public class Contact {
     }
     public String getState(){
         return this.state;
-    }
-    public String getMobNo(){
-        return this.mobNo;
     }
     public String getEmail(){
         return this.email;
@@ -64,10 +64,10 @@ public class Contact {
         return "Contact{" +
                 "fistName='" + fistName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", mobNo='" + mobNo + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
-                ", mobNo='" + mobNo + '\'' +
                 ", email='" + email + '\'' +
                 ", zip='" + zip + '\'' +
                 '}';
