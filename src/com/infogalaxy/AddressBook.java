@@ -1,5 +1,10 @@
 package com.infogalaxy;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import java.util.Scanner;
@@ -86,13 +91,30 @@ public class AddressBook {
             }
         }
     }
+    public void backupToFile(){
+        String conData=null;
+        for(int i = 0; i < contactlist.size(); i++){
+            Contact contact = contactlist.get(i);
+            conData = contact.getFistName()+","+ contact.getLastName()+","+contact.getMobNo()+
+                    ","+contact.getAddress()+","+contact.getAddress()+","+contact.getCity()+","
+                    +contact.getState()+","+contact.getEmail()+","+contact.getZip()+"\n"+conData;
+        }
+        try {
+            Path file = Paths.get("MyData.txt");
+            byte[] filedata = conData.getBytes();
+            Files.write(file,filedata);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         AddressBook addressBook = new AddressBook();
         Scanner sc = new Scanner(System.in);
         int choice = 0;
         do {
             System.out.println("*** CONTACT INVENTORY MANAGEMENT***");
-            System.out.println("1. ADD CONTACT\n2. DISPLAY CONTACT\n3. Edit Contact :\n4. find The State\n5. Delete Contact\n6. Exit");
+            System.out.println("1. ADD CONTACT\n2. DISPLAY CONTACT\n3. Edit Contact :\n" +
+                    "4. find The State\n5. Delete Contact\n6. Backup To File\n7. Exit");
             System.out.println("Enter Your Choice :");
             choice = sc.nextInt();
             switch (choice) {
@@ -111,8 +133,11 @@ public class AddressBook {
                 case 5:
                     addressBook.deleteContact();
                     break;
+                case 6:
+                    addressBook.backupToFile();
+                    break;
             }
-        }while(choice != 6);
+        }while(choice != 7);
     }
 }
 

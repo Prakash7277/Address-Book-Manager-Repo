@@ -1,0 +1,4 @@
+rahul,girase,072699082,shirpur,shirpur,shirpur,maharashtra,dsl@gmail.com,623236
+sunil,bhoi,09876554321,surat,surat,surat,gujrat,sunil@gmail.con,89236r
+prakash,patil,9145739978,sawalda,sawalda,shahada,maharashtra,pkpatil366@gmail.com,425409
+null
